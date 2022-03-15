@@ -165,7 +165,11 @@ lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o
  ../drivers/buttons.h
  ../include/mio.h
  ../include/utils.h
+ ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/bspconfig.h
+ ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/xil_printf.h
  ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/xil_types.h
+ ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/xparameters.h
+ ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/xparameters_ps.h
  /fsd/leicr/ecen330/lasertag/transmitter.h
  /fsd/leicr/ecen330/lasertag/trigger.c
  /fsd/leicr/ecen330/lasertag/trigger.h

@@ -164,7 +164,11 @@ lasertag/CMakeFiles/lasertag.elf.dir/transmitter.c.o: transmitter.h
 lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: ../drivers/buttons.h
 lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: ../include/mio.h
 lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: ../include/utils.h
+lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/bspconfig.h
+lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/xil_printf.h
 lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/xil_types.h
+lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/xparameters.h
+lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: ../platforms/zybo/xil_arm_toolchain/bsp/ps7_cortexa9_0/include/xparameters_ps.h
 lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: transmitter.h
 lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: trigger.c
 lasertag/CMakeFiles/lasertag.elf.dir/trigger.c.o: trigger.h

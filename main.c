@@ -92,11 +92,11 @@ int main() {
 
   if (buttons_read() &
       BUTTONS_BTN2_MASK) { // Read the buttons to see if BTN2 is depressed.
-    printf("Starting shooter mode\n");
-    runningModes_shooter(); // Run shooter mode if BTN2 is depressed.
-  } else {
-    printf("Starting continuous mode\n");
+    //printf("Starting continuous mode\n");
     runningModes_continuous(); // Otherwise, go to continuous mode.
+  } else {
+    //printf("Starting shooter mode\n");
+    runningModes_shooter(); // Run shooter mode if BTN2 is depressed.
   }
 #endif
 

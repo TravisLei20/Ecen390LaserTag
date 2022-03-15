@@ -7,11 +7,27 @@
 
 #include <stdio.h>
 
+
+// Uncomment for debug prints
+#define DEBUG
+
+#if defined(DEBUG)
+#include "xil_printf.h"
+#include <stdio.h>
+
+#define DPRINTF(...) printf(__VA_ARGS__)
+#define DPCHAR(ch) outbyte(ch)
+#else
+#define DPRINTF(...)
+#define DPCHAR(ch)
+#endif
+
+
 #define DEFAULT_ERROR_MESSAGE "Wrong!!!"
 #define FIVE_MS_COUNTER 500
 #define RESET_COUNTER 0
 #define TRIGGER_GUN_TRIGGER_MIO_PIN 10 // JF-2 is MIO pin 10
-#define GUN_TRIGGER_PRESSED 1
+#define GUN_TRIGGER_PRESSED true
 #define DELAY_400_MS 400
 #define INITIAL_SHOTS 100
 #define NO_SHOTS_REMAINING 0
@@ -48,9 +64,9 @@ volatile static enum trigger_st_t {
 // to TRIGGER_GUN_TRIGGER_MIO_PIN Gun input is ignored if the gun-input is high
 // when the init() function is invoked.
 bool triggerPressed() {
-  return ((!ignoreGunInput &
-           (mio_readPin(TRIGGER_GUN_TRIGGER_MIO_PIN) == GUN_TRIGGER_PRESSED)) ||
-          (buttons_read() & BUTTONS_BTN0_MASK));
+  return ((!ignoreGunInput) &
+           ((mio_readPin(TRIGGER_GUN_TRIGGER_MIO_PIN) == GUN_TRIGGER_PRESSED) ||
+          (buttons_read() & BUTTONS_BTN0_MASK)));
 }
 
 // Init trigger data-structures.
@@ -59,7 +75,6 @@ bool triggerPressed() {
 void trigger_init() {
   trigger_currentState = init_st;
   trigger_previousState = init_st;
-  buttons_init();
   mio_init(IGNORE);
 
   mio_setPinAsInput(TRIGGER_GUN_TRIGGER_MIO_PIN);
@@ -136,7 +151,7 @@ void triggerDebugStatePrint() {
 
 // Standard tick function.
 void trigger_tick() {
-  // triggerDebugStatePrint();
+  triggerDebugStatePrint();
 
   // Perform state update first.
   // Perform the Moore action based on trigger_currentState
@@ -149,7 +164,7 @@ void trigger_tick() {
 
     case trigger_wait_for_action_st:
       // if btn0 is pressed the start
-      if (buttons_read() == BUTTONS_BTN0_MASK) {
+      if (triggerPressed()) {
         trigger_currentState = trigger_debounce_pull_st;
         counter = RESET_COUNTER;
       }
@@ -161,7 +176,9 @@ void trigger_tick() {
         trigger_currentState = trigger_pulled_st;
         counter = RESET_COUNTER;
         transmitter_run();
-      } else if (buttons_read() != BUTTONS_BTN0_MASK) {
+        DPCHAR('D');
+        DPCHAR('\n');
+      } else if (!triggerPressed()) {
         trigger_currentState = trigger_wait_for_action_st;
         counter = RESET_COUNTER;
       }
@@ -169,7 +186,7 @@ void trigger_tick() {
 
     case trigger_pulled_st:
       // wait until btn is released
-      if (buttons_read() != BUTTONS_BTN0_MASK) {
+      if (!triggerPressed()) {
         trigger_currentState = trigger_debounce_release_st;
         counter = RESET_COUNTER;
       }
@@ -180,8 +197,9 @@ void trigger_tick() {
       if (counter == FIVE_MS_COUNTER) {
         trigger_currentState = trigger_release_st;
         counter = RESET_COUNTER;
-        // printf("U\n");
-      } else if (buttons_read() == BUTTONS_BTN0_MASK) {
+        DPCHAR('U');
+        DPCHAR('\n');
+      } else if (triggerPressed()) {
         trigger_currentState = trigger_pulled_st;
         counter = RESET_COUNTER;
       }

@@ -1,0 +1,9 @@
+/fsd/leicr/ecen330/lasertag/CMakeFiles/rebuild_cache.dir
+/fsd/leicr/ecen330/lasertag/CMakeFiles/edit_cache.dir
+/fsd/leicr/ecen330/lasertag/CMakeFiles/BOOT.bin.dir
+/fsd/leicr/ecen330/lasertag/lasertag/CMakeFiles/rebuild_cache.dir
+/fsd/leicr/ecen330/lasertag/lasertag/CMakeFiles/edit_cache.dir
+/fsd/leicr/ecen330/lasertag/lasertag/CMakeFiles/lasertag.elf.dir
+/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/rebuild_cache.dir
+/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/edit_cache.dir
+/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir

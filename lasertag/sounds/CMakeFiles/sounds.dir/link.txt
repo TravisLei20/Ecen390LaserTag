@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsounds.a CMakeFiles/sounds.dir/bcfire01_48k.wav.c.o CMakeFiles/sounds.dir/bcfire01.wav.c.o CMakeFiles/sounds.dir/gameBoyStartup.wav.c.o CMakeFiles/sounds.dir/gameOver48k.wav.c.o CMakeFiles/sounds.dir/gunEmpty48k.wav.c.o CMakeFiles/sounds.dir/ouch48k.wav.c.o CMakeFiles/sounds.dir/pacman_beginning_48k.wav.c.o CMakeFiles/sounds.dir/pacmanDeath.wav.c.o CMakeFiles/sounds.dir/powerUp48k.wav.c.o CMakeFiles/sounds.dir/screamAndDie48k.wav.c.o
+/usr/bin/ranlib libsounds.a

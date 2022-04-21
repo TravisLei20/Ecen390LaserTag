@@ -1,15 +1,16 @@
 #include "trigger.h"
+#include "autoReloadTimer.h"
 #include "drivers/buttons.h"
-#include "transmitter.h"
-
 #include "include/mio.h"
 #include "include/utils.h"
+#include "invincibilityTimer.h"
+#include "sound.h"
+#include "transmitter.h"
 
 #include <stdio.h>
 
-
 // Uncomment for debug prints
-#define DEBUG
+//#define DEBUG
 
 #if defined(DEBUG)
 #include "xil_printf.h"
@@ -21,7 +22,6 @@
 #define DPRINTF(...)
 #define DPCHAR(ch)
 #endif
-
 
 #define DEFAULT_ERROR_MESSAGE "Wrong!!!"
 #define FIVE_MS_COUNTER 500
@@ -65,8 +65,8 @@ volatile static enum trigger_st_t {
 // when the init() function is invoked.
 bool triggerPressed() {
   return ((!ignoreGunInput) &
-           ((mio_readPin(TRIGGER_GUN_TRIGGER_MIO_PIN) == GUN_TRIGGER_PRESSED) ||
-          (buttons_read() & BUTTONS_BTN0_MASK)));
+          ((mio_readPin(TRIGGER_GUN_TRIGGER_MIO_PIN) == GUN_TRIGGER_PRESSED) ||
+           (buttons_read() & BUTTONS_BTN0_MASK)));
 }
 
 // Init trigger data-structures.
@@ -151,7 +151,7 @@ void triggerDebugStatePrint() {
 
 // Standard tick function.
 void trigger_tick() {
-  triggerDebugStatePrint();
+  // triggerDebugStatePrint();
 
   // Perform state update first.
   // Perform the Moore action based on trigger_currentState
@@ -164,9 +164,12 @@ void trigger_tick() {
 
     case trigger_wait_for_action_st:
       // if btn0 is pressed the start
-      if (triggerPressed()) {
+      if (triggerPressed() && (remainingShots > NO_SHOTS_REMAINING) &&
+          !invincibilityTimer_running()) {
         trigger_currentState = trigger_debounce_pull_st;
         counter = RESET_COUNTER;
+      } else if (triggerPressed() && !invincibilityTimer_running()) {
+        sound_playSound(sound_gunClick_e);
       }
       break;
 
@@ -174,6 +177,10 @@ void trigger_tick() {
       // debounces for 5ms
       if (counter == FIVE_MS_COUNTER) {
         trigger_currentState = trigger_pulled_st;
+        remainingShots--;
+        sound_playSound(sound_gunFire_e);
+        printf("Remaining shots %d\n", remainingShots);
+        autoReloadTimer_start();
         counter = RESET_COUNTER;
         transmitter_run();
         DPCHAR('D');
@@ -187,6 +194,7 @@ void trigger_tick() {
     case trigger_pulled_st:
       // wait until btn is released
       if (!triggerPressed()) {
+        autoReloadTimer_cancel();
         trigger_currentState = trigger_debounce_release_st;
         counter = RESET_COUNTER;
       }
@@ -206,7 +214,6 @@ void trigger_tick() {
       break;
 
     case trigger_release_st:
-      remainingShots--;
       trigger_currentState = trigger_wait_for_action_st;
       break;
 
@@ -259,7 +266,6 @@ void trigger_runTest() {
     utils_sleep();
   }
   trigger_disable();
-  printf("Done with trigger test\n\n");
 
   // debounces
   do {

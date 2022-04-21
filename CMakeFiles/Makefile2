@@ -159,12 +159,12 @@ CMakeFiles/BOOT.bin.dir/clean:
 lasertag/CMakeFiles/lasertag.elf.dir/all: lasertag/sounds/CMakeFiles/sounds.dir/all
 	$(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/depend
 	$(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target lasertag.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target lasertag.elf"
 .PHONY : lasertag/CMakeFiles/lasertag.elf.dir/all
 
 # Build rule for subdir invocation for target.
 lasertag/CMakeFiles/lasertag.elf.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /fsd/leicr/ecen330/lasertag/CMakeFiles 26
+	$(CMAKE_COMMAND) -E cmake_progress_start /fsd/leicr/ecen330/lasertag/CMakeFiles 32
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lasertag/CMakeFiles/lasertag.elf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /fsd/leicr/ecen330/lasertag/CMakeFiles 0
 .PHONY : lasertag/CMakeFiles/lasertag.elf.dir/rule
@@ -186,12 +186,12 @@ lasertag/CMakeFiles/lasertag.elf.dir/clean:
 lasertag/sounds/CMakeFiles/sounds.dir/all:
 	$(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/depend
 	$(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=16,17,18,19,20,21,22,23,24,25,26 "Built target sounds"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=19,20,21,22,23,24,25,26,27,28,29,30,31,32 "Built target sounds"
 .PHONY : lasertag/sounds/CMakeFiles/sounds.dir/all
 
 # Build rule for subdir invocation for target.
 lasertag/sounds/CMakeFiles/sounds.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /fsd/leicr/ecen330/lasertag/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /fsd/leicr/ecen330/lasertag/CMakeFiles 14
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lasertag/sounds/CMakeFiles/sounds.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /fsd/leicr/ecen330/lasertag/CMakeFiles 0
 .PHONY : lasertag/sounds/CMakeFiles/sounds.dir/rule

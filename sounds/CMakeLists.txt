@@ -10,6 +10,9 @@ pacmanDeath.wav.c
 powerUp48k.wav.c
 powerUp48k.wav.c
 screamAndDie48k.wav.c
+zombie.c
+Mission_Failed_Sound.c
+Victory_Sound.c
 )
 
 target_link_libraries(sounds ${330_LIBS})

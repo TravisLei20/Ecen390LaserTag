@@ -18,7 +18,7 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 
 #ifndef AUTO_RELOAD_EXPIRE_VALUE
 // Default, Defined in terms of 100 kHz ticks.
-#define AUTO_RELOAD_EXPIRE_VALUE 300000
+#define AUTO_RELOAD_EXPIRE_VALUE 300000 // 300000
 #endif
 
 #ifndef AUTO_RELOAD_SHOT_VALUE

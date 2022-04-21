@@ -9,6 +9,8 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 
 #include "sound.h"
 #include "interrupts.h" // Just for sound_runTest().
+#include "sounds/Mission_Failed_Sound.h"
+#include "sounds/Victory_Sound.h"
 #include "sounds/bcfire01_48k.wav.h"
 #include "sounds/gameBoyStartup.wav.h"
 #include "sounds/gameOver48k.wav.h"
@@ -17,6 +19,7 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 #include "sounds/pacmanDeath.wav.h"
 #include "sounds/powerUp48k.wav.h"
 #include "sounds/screamAndDie48k.wav.h"
+#include "sounds/zombie.h"
 #include "timer_ps.h"
 #include "xiicps.h"
 #include "xil_printf.h"
@@ -260,8 +263,19 @@ void sound_setSound(sound_sounds_t sound) {
     sound_array = soundOfSilence;
     sound_sampleCount = ONE_SECOND_OF_SOUND_ARRAY_SIZE;
     break;
+  case sound_zombie_e:
+    sound_array = zombieSound;
+    sound_sampleCount = ZOMBIE_WAV_NUMBER_OF_SAMPLES;
+    break;
+  case sound_victory_e:
+    sound_array = Victory_Sound;
+    sound_sampleCount = VICTORY_WAV_NUMBER_OF_SAMPLES;
+    break;
+  case sound_failure_e:
+    sound_array = Failure_Sound;
+    sound_sampleCount = FAILURE_WAV_NUMBER_OF_SAMPLES;
   default:
-    printf("sound_setSound(): bogus sound value(%d)\n", sound);
+    printf("WRONG");
   }
 }
 
@@ -330,10 +344,10 @@ void sound_runTest() {
 }
 
 /**********************************************************************************
- * Note from BLH: * Most of this code was re-purposed from the original Digilent
- *demonstration code. * The code initializes the IIC controller that is
- *connected to the audio CODEC.   * It also provides functions to initialize the
- *audio CODEC and to send/received   * to/from CODEC.
+ * Note from BLH: * Most of this code was re-purposed from the original
+ *Digilent demonstration code. * The code initializes the IIC controller that
+ *is connected to the audio CODEC.   * It also provides functions to
+ *initialize the audio CODEC and to send/received   * to/from CODEC.
  **********************************************************************************/
 
 static XIicPs Iic; /* Instance of the IIC Device */
@@ -453,8 +467,8 @@ int AudioInitialize(u16 timerID, u16 iicID, u32 i2sAddr) {
 
   /*
    * Write to the SSM2603 audio codec registers to configure the device. Refer
-   * to the SSM2603 Audio Codec data sheet for information on what these writes
-   * do.
+   * to the SSM2603 Audio Codec data sheet for information on what these
+   * writes do.
    */
 
   // Perform Reset
@@ -511,9 +525,9 @@ int AudioInitialize(u16 timerID, u16 iicID, u32 i2sAddr) {
   // BLH: This is the original value used by digilent.
   //  i2sClkDiv = 1; //Set the BCLK to be MCLK / 4
   // BLH: This value makes things sound correct.
-  // Not sure what the problem is, perhaps the DLL is not running at the correct
-  // frequency? or, there is a bug in the IP that drives the CODEC. In any case,
-  // the sampling rate is 48k.
+  // Not sure what the problem is, perhaps the DLL is not running at the
+  // correct frequency? or, there is a bug in the IP that drives the CODEC. In
+  // any case, the sampling rate is 48k.
   i2sClkDiv = 3;
   // Set the LRCLK's to be BCLK / 64
   i2sClkDiv = i2sClkDiv | (31 << 16);

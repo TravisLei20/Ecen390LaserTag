@@ -8,16 +8,16 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 */
 
 // Uncomment to run tests, various Milestones
-//#define RUNNING_MODE_TESTS
+// #define RUNNING_MODE_TESTS
 
 // Uncomment to run Milestone 3, Task 2
 //#define RUNNING_MODE_M3_T2
 
 // Uncomment to run continuous/shooter mode, Milestone 3, Task 3
-#define RUNNING_MODE_M3_T3
+//#define RUNNING_MODE_M3_T3
 
 // Uncomment to run two-player mode, Milestone 5
-// #define RUNNING_MODE_M5
+#define RUNNING_MODE_M5
 
 // The following line enables the main() contained in laserTagMain.c
 // Leave this line uncommented unless you want to run some other special test
@@ -56,8 +56,8 @@ int main() {
   // queue_runTest(); // M1
   // filterTest_runTest(); // M3 T1
   // transmitter_runTest(); // M3 T2
-  detector_runTest(); // M3 T3
-  // sound_runTest(); // M4
+  // detector_runTest(); // M3 T3
+  sound_runTest(); // M4
 #endif
 
 #ifdef RUNNING_MODE_M3_T2
@@ -92,17 +92,17 @@ int main() {
 
   if (buttons_read() &
       BUTTONS_BTN2_MASK) { // Read the buttons to see if BTN2 is depressed.
-    //printf("Starting continuous mode\n");
+    // printf("Starting continuous mode\n");
     runningModes_continuous(); // Otherwise, go to continuous mode.
   } else {
-    //printf("Starting shooter mode\n");
+    // printf("Starting shooter mode\n");
     runningModes_shooter(); // Run shooter mode if BTN2 is depressed.
   }
 #endif
 
 #ifdef RUNNING_MODE_M5
   printf("Starting two team mode\n");
-  runningModes_twoTeams();
+  runningModes_zombie();
 #endif
 
   return 0;

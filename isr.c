@@ -1,8 +1,11 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#include "autoReloadTimer.h"
+#include "globalRunTime.h"
 #include "hitLedTimer.h"
 #include "include/interrupts.h"
+#include "invincibilityTimer.h"
 #include "isr.h"
 #include "lockoutTimer.h"
 #include "sound.h"
@@ -104,6 +107,9 @@ void isr_init() {
   hitLedTimer_init();
   lockoutTimer_init();
   sound_init();
+  invincibilityTimer_init();
+  autoReloadTimer_init();
+  globalRunTime_init();
 }
 
 // This function is invoked by the timer interrupt at 100 kHz.
@@ -113,4 +119,8 @@ void isr_function() {
   hitLedTimer_tick();
   lockoutTimer_tick();
   isr_addDataToAdcBuffer(interrupts_getAdcData());
+  sound_tick();
+  invincibilityTimer_tick();
+  autoReloadTimer_tick();
+  globalRunTime_tick();
 }

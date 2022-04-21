@@ -18,7 +18,6 @@ For questions, contact Brad Hutchings or Jeff Goeders, https://ece.byu.edu/
 #include "drivers/intervalTimer.h"
 #include "drivers/switches.h"
 #include "filter.h"
-#include "globalRunTime.h"
 #include "histogram.h"
 #include "hitLedTimer.h"
 #include "interrupts.h"
@@ -53,7 +52,7 @@ modes here.
 // the ability to ignore frequencies in detector.c
 #define IGNORE_OWN_FREQUENCY 1
 
-#define MAX_HIT_COUNT 3
+#define MAX_HIT_COUNT 5
 
 #define MAX_BUFFER_SIZE 100 // Used for a generic message buffer.
 
@@ -91,8 +90,7 @@ modes here.
 
 #define TEAM_A_FREQUENCY 6
 #define TEAM_B_FREQUENCY 9
-#define ZOMBIE_LIVES 3
-#define HUMAN_LIVES 1
+#define STARTING_LIVES 3
 #define STARTING_SHOTS 10
 #define DEAD 0
 #define RESET_COUNTER 0
@@ -101,7 +99,6 @@ modes here.
 #define IGNORE true
 
 #define FIVE_SECONDS 5
-#define GAME_TIME 3 // run for three minutes
 
 static sound_sounds_t sound;
 static sound_volume_t volume;
@@ -109,7 +106,7 @@ static sound_volume_t volume;
 // Keep track of detector invocations.
 volatile static uint32_t detectorInvocationCount = 0;
 
-volatile static uint8_t playerLives = HUMAN_LIVES;
+volatile static uint8_t playerLives = STARTING_LIVES;
 
 volatile static bool automaticReloadStarted = !STARTED;
 
@@ -126,7 +123,6 @@ void runningModes_initAll() {
   filter_init();
   sound_init();
   isr_init();
-  globalRunTime_start(GAME_TIME);
 }
 
 // Returns the current switch-setting
@@ -135,63 +131,69 @@ uint16_t runningModes_getFrequencySetting() {
       switches_read() & SWITCHES_SW0_MASK; // Bit-mask the results.
 
   // Ignores the correct frequency
-  // TEAM A is humans
-  // TEAM B is zombies
   if (!switchSetting) {
     ignoredFrequenciesArray[TEAM_A_FREQUENCY] = IGNORE_OWN_FREQUENCY;
-    playerLives = HUMAN_LIVES;
     return TEAM_A_FREQUENCY;
   } else {
     ignoredFrequenciesArray[TEAM_B_FREQUENCY] = IGNORE_OWN_FREQUENCY;
-    playerLives = ZOMBIE_LIVES;
     return TEAM_B_FREQUENCY;
   }
-}
-
-uint16_t toZombieTeam() {
-  ignoredFrequenciesArray[TEAM_A_FREQUENCY] = !IGNORE_OWN_FREQUENCY;
-  ignoredFrequenciesArray[TEAM_B_FREQUENCY] = IGNORE_OWN_FREQUENCY;
-  return TEAM_B_FREQUENCY;
-}
-
-void shooterModeInits() {
-  interrupts_initAll(true);
-  interrupts_enableTimerGlobalInts();
-  interrupts_startArmPrivateTimer();
-  intervalTimer_reset(ISR_CUMULATIVE_TIMER);
-  intervalTimer_reset(TOTAL_RUNTIME_TIMER);
-  intervalTimer_reset(MAIN_CUMULATIVE_TIMER);
-  intervalTimer_start(TOTAL_RUNTIME_TIMER);
-  interrupts_enableArmInts();
 }
 
 // This is the function that does most of the work
 // It has most of the logic for this two team mode
 void runningModes_shooter() {
   uint16_t hitCount = RESET_COUNTER;
-  uint16_t histogramSystemTicks = RESET_COUNTER;
-  detectorInvocationCount = RESET_COUNTER;
 
-  trigger_enable();
-  lockoutTimer_start();
+  detectorInvocationCount =
+      RESET_COUNTER;        // Keep track of detector invocations.
+  trigger_enable();         // Makes the trigger state machine responsive to the
+                            // trigger.
+  
+
+
+
+  //interrupts_initAll(true); // Inits all interrupts but does not enable them.
+
+
+
+
+
+
+  interrupts_enableTimerGlobalInts(); // Allows the timer to generate
+                                      // interrupts.
+  interrupts_startArmPrivateTimer();  // Start the private ARM timer running.
+  uint16_t histogramSystemTicks =
+      RESET_COUNTER; // Only update the histogram display every so many ticks.
+  intervalTimer_reset(
+      ISR_CUMULATIVE_TIMER); // Used to measure ISR execution time.
+  intervalTimer_reset(
+      TOTAL_RUNTIME_TIMER); // Used to measure total program execution time.
+  intervalTimer_reset(
+      MAIN_CUMULATIVE_TIMER); // Used to measure main-loop execution time.
+  intervalTimer_start(
+      TOTAL_RUNTIME_TIMER);   // Start measuring total execution time.
+  interrupts_enableArmInts(); // The ARM will start seeing interrupts after
+                              // this.
+  lockoutTimer_start(); // Ignore erroneous hits at startup (when all power
+                        // values are essentially 0).
 
   // As long as button 3 isn't pressed and the player hasn't lost all of his/her
   // lives then continue
+  while (((buttons_read() != BUTTONS_BTN3_MASK)) && (playerLives > DEAD)) {
+    intervalTimer_start(MAIN_CUMULATIVE_TIMER); // Measure run-time when you are
+                                                // doing something.
+    histogramSystemTicks++; // Keep track of ticks so you know when to update
+                            // the histogram.
 
-  while (((buttons_read() != BUTTONS_BTN3_MASK)) && (playerLives > DEAD) &&
-         (globalRunTime_running())) {           // main suspicion globalRunTime
-    intervalTimer_start(MAIN_CUMULATIVE_TIMER); // Measure run-time
-    histogramSystemTicks++;    // Keep track of ticks to update the histogram.
+    // Run filters, compute power, run hit-detection.
+
     detectorInvocationCount++; // Used for run-time statistics.
+
     detector(INTERRUPTS_CURRENTLY_ENABLED); // Interrupts are currently enabled.
 
-    if (transmitter_getFrequencyNumber() == TEAM_B_FREQUENCY &&
-        !sound_isBusy()) {
-      sound_playSound(sound_zombie_e);
-    }
-
     // If a hit is detected or button 1 is pressed
-    if ((detector_hitDetected() || (buttons_read() == BUTTONS_BTN2_MASK)) &&
+    if ((detector_hitDetected() || (buttons_read() == 0x2)) &&
         !invincibilityTimer_running()) { // Hit detected
       // printf("HEY! A HIT WAS DETECTED IN RUNNING MODES 2\n");
       hitCount++;          // increment the hit count.
@@ -223,103 +225,44 @@ void runningModes_shooter() {
       autoReloadTimer_start();
     }
 
-    intervalTimer_stop(MAIN_CUMULATIVE_TIMER);
+    intervalTimer_stop(
+        MAIN_CUMULATIVE_TIMER); // All done with actual processing.
   }
 
-  printf("Shooter mode terminated after detecting %d shots.\n", hitCount);
-  trigger_disable();
+  // printf("Shooter mode terminated after detecting %d shots.\n", hitCount);
 }
 
 // This is the function that initializes the things that need to be initialized
 // It also is the one that is called from main
-void runningModes_zombie() {
-  /////////              Completed tasks              //////////
-  // set up zombie team - team b is zombie
-  // human -> zombie transition
-  // global run timer - globalRunTime.h mimics invincibility timer
-
-  ////////                  TODO                /////////
-  // zombie sounds
-
-  uint16_t hitCount = RESET_COUNTER;
+void runningModes_twoTeams() {
 
   printf("Starting runningModes_twoTeams\n");
 
   transmitter_setFrequencyNumber(runningModes_getFrequencySetting());
-  // printf("initial frequency number: %d\n", transmitter_getFrequencyNumber());
+
   detector_init(ignoredFrequenciesArray);
+
+  uint16_t hitCount = RESET_COUNTER;
+  playerLives = STARTING_LIVES;
   runningModes_initAll();
   // More initialization...
 
-  sound_setVolume(sound_mediumHighVolume_e);
-  printf("play starting sound\n");
+  sound_setVolume(sound_maximumVolume_e);
+
   sound_playSound(sound_gameStart_e);
 
   trigger_setRemainingShotCount(STARTING_SHOTS);
   printf("Total shots available %d\n", trigger_getRemainingShotCount());
 
   // Implement game loop...
-  shooterModeInits();
   runningModes_shooter();
-
-  bool soundAlternate = true;
-
-  while (!globalRunTime_running() &&
-         transmitter_getFrequencyNumber() != TEAM_B_FREQUENCY) {
-    // if the sound in complete then start another sound
-    if (sound_isSoundComplete()) {
-      // If soundAlternate is true then sound the return to base
-      // Else start the one second of silence
-      if (soundAlternate) {
-
-        sound_setSound(sound_victory_e);
-        sound_startSound();
-
-        soundAlternate = false;
-      } else if (!soundAlternate) {
-
-        sound_setSound(sound_oneSecondSilence_e);
-        sound_startSound();
-
-        soundAlternate = true;
-      }
-    }
-  }
 
   sound_playSound(sound_gameOver_e);
 
-  // if not already zombie, move to zombie team
-  if (transmitter_getFrequencyNumber() != TEAM_B_FREQUENCY) {
-    transmitter_setFrequencyNumber(toZombieTeam());
-    detector_init(ignoredFrequenciesArray);
-    // printf("new frequency number: %d\n", transmitter_getFrequencyNumber());
-    playerLives = ZOMBIE_LIVES;
-
-    runningModes_shooter();
-  }
-
   printf("Two-team mode terminated\n");
+  trigger_disable();
 
-  while (!globalRunTime_running()) {
-    // if the sound in complete then start another sound
-    if (sound_isSoundComplete()) {
-      // If soundAlternate is true then sound the return to base
-      // Else start the one second of silence
-      if (soundAlternate) {
-
-        sound_setSound(sound_failure_e);
-        sound_startSound();
-
-        soundAlternate = false;
-      } else if (!soundAlternate) {
-
-        sound_setSound(sound_oneSecondSilence_e);
-        sound_startSound();
-
-        soundAlternate = true;
-      }
-    }
-  }
+  bool soundAlternate = true;
 
   // Always runs and instructs the player
   while (1) {

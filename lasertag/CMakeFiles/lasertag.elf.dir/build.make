@@ -245,18 +245,57 @@ lasertag/CMakeFiles/lasertag.elf.dir/timer_ps.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lasertag.elf.dir/timer_ps.c.s"
 	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/timer_ps.c -o CMakeFiles/lasertag.elf.dir/timer_ps.c.s
 
-lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.o: lasertag/CMakeFiles/lasertag.elf.dir/flags.make
-lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.o: runningModes.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.o"
-	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lasertag.elf.dir/runningModes.c.o -c /fsd/leicr/ecen330/lasertag/runningModes.c
+lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.o: lasertag/CMakeFiles/lasertag.elf.dir/flags.make
+lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.o: runningModes2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.o"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lasertag.elf.dir/runningModes2.c.o -c /fsd/leicr/ecen330/lasertag/runningModes2.c
 
-lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lasertag.elf.dir/runningModes.c.i"
-	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /fsd/leicr/ecen330/lasertag/runningModes.c > CMakeFiles/lasertag.elf.dir/runningModes.c.i
+lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lasertag.elf.dir/runningModes2.c.i"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /fsd/leicr/ecen330/lasertag/runningModes2.c > CMakeFiles/lasertag.elf.dir/runningModes2.c.i
 
-lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lasertag.elf.dir/runningModes.c.s"
-	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/runningModes.c -o CMakeFiles/lasertag.elf.dir/runningModes.c.s
+lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lasertag.elf.dir/runningModes2.c.s"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/runningModes2.c -o CMakeFiles/lasertag.elf.dir/runningModes2.c.s
+
+lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.o: lasertag/CMakeFiles/lasertag.elf.dir/flags.make
+lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.o: autoReloadTimer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.o"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.o -c /fsd/leicr/ecen330/lasertag/autoReloadTimer.c
+
+lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.i"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /fsd/leicr/ecen330/lasertag/autoReloadTimer.c > CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.i
+
+lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.s"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/autoReloadTimer.c -o CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.s
+
+lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.o: lasertag/CMakeFiles/lasertag.elf.dir/flags.make
+lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.o: invincibilityTimer.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.o"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.o -c /fsd/leicr/ecen330/lasertag/invincibilityTimer.c
+
+lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.i"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /fsd/leicr/ecen330/lasertag/invincibilityTimer.c > CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.i
+
+lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.s"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/invincibilityTimer.c -o CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.s
+
+lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.o: lasertag/CMakeFiles/lasertag.elf.dir/flags.make
+lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.o: globalRunTime.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.o"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lasertag.elf.dir/globalRunTime.c.o -c /fsd/leicr/ecen330/lasertag/globalRunTime.c
+
+lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lasertag.elf.dir/globalRunTime.c.i"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /fsd/leicr/ecen330/lasertag/globalRunTime.c > CMakeFiles/lasertag.elf.dir/globalRunTime.c.i
+
+lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lasertag.elf.dir/globalRunTime.c.s"
+	cd /fsd/leicr/ecen330/lasertag/lasertag && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/globalRunTime.c -o CMakeFiles/lasertag.elf.dir/globalRunTime.c.s
 
 # Object files for target lasertag.elf
 lasertag_elf_OBJECTS = \
@@ -273,7 +312,10 @@ lasertag_elf_OBJECTS = \
 "CMakeFiles/lasertag.elf.dir/detector.c.o" \
 "CMakeFiles/lasertag.elf.dir/sound.c.o" \
 "CMakeFiles/lasertag.elf.dir/timer_ps.c.o" \
-"CMakeFiles/lasertag.elf.dir/runningModes.c.o"
+"CMakeFiles/lasertag.elf.dir/runningModes2.c.o" \
+"CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.o" \
+"CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.o" \
+"CMakeFiles/lasertag.elf.dir/globalRunTime.c.o"
 
 # External object files for target lasertag.elf
 lasertag_elf_EXTERNAL_OBJECTS =
@@ -291,11 +333,14 @@ lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/lockoutTimer.c.o
 lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/detector.c.o
 lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/sound.c.o
 lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/timer_ps.c.o
-lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.o
+lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.o
+lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.o
+lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.o
+lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.o
 lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/build.make
 lasertag/lasertag.elf: lasertag/sounds/libsounds.a
 lasertag/lasertag.elf: lasertag/CMakeFiles/lasertag.elf.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX executable lasertag.elf"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable lasertag.elf"
 	cd /fsd/leicr/ecen330/lasertag/lasertag && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lasertag.elf.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

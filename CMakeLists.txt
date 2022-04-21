@@ -12,8 +12,11 @@ lockoutTimer.c
 detector.c
 sound.c
 timer_ps.c
-runningModes.c
-# runningModes2.c
+#runningModes.c
+runningModes2.c
+autoReloadTimer.c
+invincibilityTimer.c
+globalRunTime.c
 )
 
 add_subdirectory(sounds)

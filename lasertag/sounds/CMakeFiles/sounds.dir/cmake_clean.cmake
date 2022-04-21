@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o"
+  "CMakeFiles/sounds.dir/Victory_Sound.c.o"
   "CMakeFiles/sounds.dir/bcfire01.wav.c.o"
   "CMakeFiles/sounds.dir/bcfire01_48k.wav.c.o"
   "CMakeFiles/sounds.dir/gameBoyStartup.wav.c.o"
@@ -9,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/sounds.dir/pacman_beginning_48k.wav.c.o"
   "CMakeFiles/sounds.dir/powerUp48k.wav.c.o"
   "CMakeFiles/sounds.dir/screamAndDie48k.wav.c.o"
+  "CMakeFiles/sounds.dir/zombie.c.o"
   "libsounds.a"
   "libsounds.pdb"
 )

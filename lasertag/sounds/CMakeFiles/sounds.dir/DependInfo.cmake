@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/fsd/leicr/ecen330/lasertag/sounds/Mission_Failed_Sound.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o"
+  "/fsd/leicr/ecen330/lasertag/sounds/Victory_Sound.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.o"
   "/fsd/leicr/ecen330/lasertag/sounds/bcfire01.wav.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/bcfire01.wav.c.o"
   "/fsd/leicr/ecen330/lasertag/sounds/bcfire01_48k.wav.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/bcfire01_48k.wav.c.o"
   "/fsd/leicr/ecen330/lasertag/sounds/gameBoyStartup.wav.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/gameBoyStartup.wav.c.o"
@@ -14,6 +16,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/fsd/leicr/ecen330/lasertag/sounds/pacman_beginning_48k.wav.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/pacman_beginning_48k.wav.c.o"
   "/fsd/leicr/ecen330/lasertag/sounds/powerUp48k.wav.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/powerUp48k.wav.c.o"
   "/fsd/leicr/ecen330/lasertag/sounds/screamAndDie48k.wav.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/screamAndDie48k.wav.c.o"
+  "/fsd/leicr/ecen330/lasertag/sounds/zombie.c" "/fsd/leicr/ecen330/lasertag/lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

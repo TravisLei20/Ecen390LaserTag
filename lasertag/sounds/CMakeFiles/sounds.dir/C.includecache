@@ -6,43 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/fsd/leicr/ecen330/lasertag/sounds/bcfire01.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/bcfire01_48k.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/gameBoyStartup.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/gameOver48k.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/gunEmpty48k.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/ouch48k.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/pacmanDeath.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/pacman_beginning_48k.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/powerUp48k.wav.c
-stdint.h
--
-
-/fsd/leicr/ecen330/lasertag/sounds/screamAndDie48k.wav.c
+/fsd/leicr/ecen330/lasertag/sounds/Mission_Failed_Sound.c
 stdint.h
 -
 

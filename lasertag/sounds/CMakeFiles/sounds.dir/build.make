@@ -206,6 +206,45 @@ lasertag/sounds/CMakeFiles/sounds.dir/screamAndDie48k.wav.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sounds.dir/screamAndDie48k.wav.c.s"
 	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/sounds/screamAndDie48k.wav.c -o CMakeFiles/sounds.dir/screamAndDie48k.wav.c.s
 
+lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.o: lasertag/sounds/CMakeFiles/sounds.dir/flags.make
+lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.o: sounds/zombie.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.o"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sounds.dir/zombie.c.o -c /fsd/leicr/ecen330/lasertag/sounds/zombie.c
+
+lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sounds.dir/zombie.c.i"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /fsd/leicr/ecen330/lasertag/sounds/zombie.c > CMakeFiles/sounds.dir/zombie.c.i
+
+lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sounds.dir/zombie.c.s"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/sounds/zombie.c -o CMakeFiles/sounds.dir/zombie.c.s
+
+lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o: lasertag/sounds/CMakeFiles/sounds.dir/flags.make
+lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o: sounds/Mission_Failed_Sound.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o -c /fsd/leicr/ecen330/lasertag/sounds/Mission_Failed_Sound.c
+
+lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sounds.dir/Mission_Failed_Sound.c.i"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /fsd/leicr/ecen330/lasertag/sounds/Mission_Failed_Sound.c > CMakeFiles/sounds.dir/Mission_Failed_Sound.c.i
+
+lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sounds.dir/Mission_Failed_Sound.c.s"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/sounds/Mission_Failed_Sound.c -o CMakeFiles/sounds.dir/Mission_Failed_Sound.c.s
+
+lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.o: lasertag/sounds/CMakeFiles/sounds.dir/flags.make
+lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.o: sounds/Victory_Sound.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.o"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sounds.dir/Victory_Sound.c.o -c /fsd/leicr/ecen330/lasertag/sounds/Victory_Sound.c
+
+lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sounds.dir/Victory_Sound.c.i"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /fsd/leicr/ecen330/lasertag/sounds/Victory_Sound.c > CMakeFiles/sounds.dir/Victory_Sound.c.i
+
+lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sounds.dir/Victory_Sound.c.s"
+	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && arm-none-eabi-gcc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /fsd/leicr/ecen330/lasertag/sounds/Victory_Sound.c -o CMakeFiles/sounds.dir/Victory_Sound.c.s
+
 # Object files for target sounds
 sounds_OBJECTS = \
 "CMakeFiles/sounds.dir/bcfire01_48k.wav.c.o" \
@@ -217,7 +256,10 @@ sounds_OBJECTS = \
 "CMakeFiles/sounds.dir/pacman_beginning_48k.wav.c.o" \
 "CMakeFiles/sounds.dir/pacmanDeath.wav.c.o" \
 "CMakeFiles/sounds.dir/powerUp48k.wav.c.o" \
-"CMakeFiles/sounds.dir/screamAndDie48k.wav.c.o"
+"CMakeFiles/sounds.dir/screamAndDie48k.wav.c.o" \
+"CMakeFiles/sounds.dir/zombie.c.o" \
+"CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o" \
+"CMakeFiles/sounds.dir/Victory_Sound.c.o"
 
 # External object files for target sounds
 sounds_EXTERNAL_OBJECTS =
@@ -232,9 +274,12 @@ lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/pacman_beginn
 lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/pacmanDeath.wav.c.o
 lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/powerUp48k.wav.c.o
 lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/screamAndDie48k.wav.c.o
+lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.o
+lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o
+lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.o
 lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/build.make
 lasertag/sounds/libsounds.a: lasertag/sounds/CMakeFiles/sounds.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking C static library libsounds.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/fsd/leicr/ecen330/lasertag/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking C static library libsounds.a"
 	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && $(CMAKE_COMMAND) -P CMakeFiles/sounds.dir/cmake_clean_target.cmake
 	cd /fsd/leicr/ecen330/lasertag/lasertag/sounds && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sounds.dir/link.txt --verbose=$(VERBOSE)
 

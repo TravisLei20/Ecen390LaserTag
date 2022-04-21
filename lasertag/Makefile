@@ -144,6 +144,33 @@ lasertag.elf/fast:
 	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/build
 .PHONY : lasertag.elf/fast
 
+autoReloadTimer.o: autoReloadTimer.c.o
+
+.PHONY : autoReloadTimer.o
+
+# target to build an object file
+autoReloadTimer.c.o:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.o
+.PHONY : autoReloadTimer.c.o
+
+autoReloadTimer.i: autoReloadTimer.c.i
+
+.PHONY : autoReloadTimer.i
+
+# target to preprocess a source file
+autoReloadTimer.c.i:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.i
+.PHONY : autoReloadTimer.c.i
+
+autoReloadTimer.s: autoReloadTimer.c.s
+
+.PHONY : autoReloadTimer.s
+
+# target to generate assembly for a file
+autoReloadTimer.c.s:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/autoReloadTimer.c.s
+.PHONY : autoReloadTimer.c.s
+
 detector.o: detector.c.o
 
 .PHONY : detector.o
@@ -225,6 +252,33 @@ filterTest.c.s:
 	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/filterTest.c.s
 .PHONY : filterTest.c.s
 
+globalRunTime.o: globalRunTime.c.o
+
+.PHONY : globalRunTime.o
+
+# target to build an object file
+globalRunTime.c.o:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.o
+.PHONY : globalRunTime.c.o
+
+globalRunTime.i: globalRunTime.c.i
+
+.PHONY : globalRunTime.i
+
+# target to preprocess a source file
+globalRunTime.c.i:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.i
+.PHONY : globalRunTime.c.i
+
+globalRunTime.s: globalRunTime.c.s
+
+.PHONY : globalRunTime.s
+
+# target to generate assembly for a file
+globalRunTime.c.s:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/globalRunTime.c.s
+.PHONY : globalRunTime.c.s
+
 histogram.o: histogram.c.o
 
 .PHONY : histogram.o
@@ -278,6 +332,33 @@ hitLedTimer.s: hitLedTimer.c.s
 hitLedTimer.c.s:
 	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/hitLedTimer.c.s
 .PHONY : hitLedTimer.c.s
+
+invincibilityTimer.o: invincibilityTimer.c.o
+
+.PHONY : invincibilityTimer.o
+
+# target to build an object file
+invincibilityTimer.c.o:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.o
+.PHONY : invincibilityTimer.c.o
+
+invincibilityTimer.i: invincibilityTimer.c.i
+
+.PHONY : invincibilityTimer.i
+
+# target to preprocess a source file
+invincibilityTimer.c.i:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.i
+.PHONY : invincibilityTimer.c.i
+
+invincibilityTimer.s: invincibilityTimer.c.s
+
+.PHONY : invincibilityTimer.s
+
+# target to generate assembly for a file
+invincibilityTimer.c.s:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/invincibilityTimer.c.s
+.PHONY : invincibilityTimer.c.s
 
 isr.o: isr.c.o
 
@@ -387,32 +468,32 @@ queue_test.c.s:
 	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/queue_test.c.s
 .PHONY : queue_test.c.s
 
-runningModes.o: runningModes.c.o
+runningModes2.o: runningModes2.c.o
 
-.PHONY : runningModes.o
+.PHONY : runningModes2.o
 
 # target to build an object file
-runningModes.c.o:
-	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.o
-.PHONY : runningModes.c.o
+runningModes2.c.o:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.o
+.PHONY : runningModes2.c.o
 
-runningModes.i: runningModes.c.i
+runningModes2.i: runningModes2.c.i
 
-.PHONY : runningModes.i
+.PHONY : runningModes2.i
 
 # target to preprocess a source file
-runningModes.c.i:
-	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.i
-.PHONY : runningModes.c.i
+runningModes2.c.i:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.i
+.PHONY : runningModes2.c.i
 
-runningModes.s: runningModes.c.s
+runningModes2.s: runningModes2.c.s
 
-.PHONY : runningModes.s
+.PHONY : runningModes2.s
 
 # target to generate assembly for a file
-runningModes.c.s:
-	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/runningModes.c.s
-.PHONY : runningModes.c.s
+runningModes2.c.s:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/CMakeFiles/lasertag.elf.dir/build.make lasertag/CMakeFiles/lasertag.elf.dir/runningModes2.c.s
+.PHONY : runningModes2.c.s
 
 sound.o: sound.c.o
 
@@ -531,6 +612,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... lasertag.elf"
+	@echo "... autoReloadTimer.o"
+	@echo "... autoReloadTimer.i"
+	@echo "... autoReloadTimer.s"
 	@echo "... detector.o"
 	@echo "... detector.i"
 	@echo "... detector.s"
@@ -540,12 +624,18 @@ help:
 	@echo "... filterTest.o"
 	@echo "... filterTest.i"
 	@echo "... filterTest.s"
+	@echo "... globalRunTime.o"
+	@echo "... globalRunTime.i"
+	@echo "... globalRunTime.s"
 	@echo "... histogram.o"
 	@echo "... histogram.i"
 	@echo "... histogram.s"
 	@echo "... hitLedTimer.o"
 	@echo "... hitLedTimer.i"
 	@echo "... hitLedTimer.s"
+	@echo "... invincibilityTimer.o"
+	@echo "... invincibilityTimer.i"
+	@echo "... invincibilityTimer.s"
 	@echo "... isr.o"
 	@echo "... isr.i"
 	@echo "... isr.s"
@@ -558,9 +648,9 @@ help:
 	@echo "... queue_test.o"
 	@echo "... queue_test.i"
 	@echo "... queue_test.s"
-	@echo "... runningModes.o"
-	@echo "... runningModes.i"
-	@echo "... runningModes.s"
+	@echo "... runningModes2.o"
+	@echo "... runningModes2.i"
+	@echo "... runningModes2.s"
 	@echo "... sound.o"
 	@echo "... sound.i"
 	@echo "... sound.s"

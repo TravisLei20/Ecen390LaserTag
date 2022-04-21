@@ -144,6 +144,60 @@ sounds/fast:
 	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/build
 .PHONY : sounds/fast
 
+Mission_Failed_Sound.o: Mission_Failed_Sound.c.o
+
+.PHONY : Mission_Failed_Sound.o
+
+# target to build an object file
+Mission_Failed_Sound.c.o:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.o
+.PHONY : Mission_Failed_Sound.c.o
+
+Mission_Failed_Sound.i: Mission_Failed_Sound.c.i
+
+.PHONY : Mission_Failed_Sound.i
+
+# target to preprocess a source file
+Mission_Failed_Sound.c.i:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.i
+.PHONY : Mission_Failed_Sound.c.i
+
+Mission_Failed_Sound.s: Mission_Failed_Sound.c.s
+
+.PHONY : Mission_Failed_Sound.s
+
+# target to generate assembly for a file
+Mission_Failed_Sound.c.s:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/Mission_Failed_Sound.c.s
+.PHONY : Mission_Failed_Sound.c.s
+
+Victory_Sound.o: Victory_Sound.c.o
+
+.PHONY : Victory_Sound.o
+
+# target to build an object file
+Victory_Sound.c.o:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.o
+.PHONY : Victory_Sound.c.o
+
+Victory_Sound.i: Victory_Sound.c.i
+
+.PHONY : Victory_Sound.i
+
+# target to preprocess a source file
+Victory_Sound.c.i:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.i
+.PHONY : Victory_Sound.c.i
+
+Victory_Sound.s: Victory_Sound.c.s
+
+.PHONY : Victory_Sound.s
+
+# target to generate assembly for a file
+Victory_Sound.c.s:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/Victory_Sound.c.s
+.PHONY : Victory_Sound.c.s
+
 bcfire01.wav.o: bcfire01.wav.c.o
 
 .PHONY : bcfire01.wav.o
@@ -414,6 +468,33 @@ screamAndDie48k.wav.c.s:
 	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/screamAndDie48k.wav.c.s
 .PHONY : screamAndDie48k.wav.c.s
 
+zombie.o: zombie.c.o
+
+.PHONY : zombie.o
+
+# target to build an object file
+zombie.c.o:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.o
+.PHONY : zombie.c.o
+
+zombie.i: zombie.c.i
+
+.PHONY : zombie.i
+
+# target to preprocess a source file
+zombie.c.i:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.i
+.PHONY : zombie.c.i
+
+zombie.s: zombie.c.s
+
+.PHONY : zombie.s
+
+# target to generate assembly for a file
+zombie.c.s:
+	cd /fsd/leicr/ecen330/lasertag && $(MAKE) $(MAKESILENT) -f lasertag/sounds/CMakeFiles/sounds.dir/build.make lasertag/sounds/CMakeFiles/sounds.dir/zombie.c.s
+.PHONY : zombie.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -423,6 +504,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... sounds"
+	@echo "... Mission_Failed_Sound.o"
+	@echo "... Mission_Failed_Sound.i"
+	@echo "... Mission_Failed_Sound.s"
+	@echo "... Victory_Sound.o"
+	@echo "... Victory_Sound.i"
+	@echo "... Victory_Sound.s"
 	@echo "... bcfire01.wav.o"
 	@echo "... bcfire01.wav.i"
 	@echo "... bcfire01.wav.s"
@@ -453,6 +540,9 @@ help:
 	@echo "... screamAndDie48k.wav.o"
 	@echo "... screamAndDie48k.wav.i"
 	@echo "... screamAndDie48k.wav.s"
+	@echo "... zombie.o"
+	@echo "... zombie.i"
+	@echo "... zombie.s"
 .PHONY : help
 
 
